@@ -1,0 +1,59 @@
+Exercises
+
+1.
+a)
+  var line = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+
+b)
+  line.push("Mary");
+
+c)
+  var name1 = "Josh";
+  line.forEach((name, index) => {
+    if(name === name1) {
+      return index;
+    }
+  })
+
+d)
+  var name1 = "Emily";
+
+  line.forEach((name, index) => {
+    if(name === name1) {
+      return index;
+    }
+  })
+  return 'No one named ${name1} is in the line.'
+
+e)
+  var name1 = "Ava";
+  var name2 = "Melissa";
+  
+
+  location = 0;
+  line.forEach((name, index) => {
+    if(name === name1) {
+      location = index;
+    }
+  })
+
+  line.splice(location,0,name2);
+
+f)
+  var name1 = "Patrick";
+
+  location = 0;
+  line.forEach((name, index) => {
+    if(name === name2) {
+      location = index;
+    }
+  })
+
+  line.splice(location,1);
+
+2.
+Another real world example could include cars in a numbered parking lot. 
+
+3.
+The data structure would have methods that would allow developers to manipulate the data structure.
+There would be methods to add data, edit it, etc.
