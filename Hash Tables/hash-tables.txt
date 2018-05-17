@@ -1,0 +1,32 @@
+1. What is a hash table?
+  A hash table is a speciaized array, where key values pairs are assigned an index in the array, 
+  and the key has under gone hashing, in order to make it a numerical value or hash code.
+
+2. What is hashing?
+  A process taht takes data and converts it into a fixed-length numerical value, known as hash 
+  code, through the use of a hashing function.
+
+3. How does a hash table store data?
+  Hash tables use a special method for storing data within arrays. First it takes the key and 
+  hashes it through a hashing function to get a hash code, then another function determines the 
+  true index of that data and stores both the key and its value at that index.
+
+4. How are hash tables and objects different
+  Objects are unordered lists of key value pairs, while hash tables have keys that have been 
+  converted into hash codes, and are ordered by their true index value.
+
+5. Determine whether you would use a hash table or an object to store each of the following 
+  pieces of data:
+*A list of pets and their unique names.
+  I would use a hash table.
+*The name, age, and the birthday of your best friend.
+  I would use an object.
+*The name and location of every company in a given city.
+  I would use a hash table.
+*All of the books checked out from a library by a particular individual.
+  I would use an object.
+*The primary and secondary phone numbers for a contact.
+  I would use an object.
+
+
+
