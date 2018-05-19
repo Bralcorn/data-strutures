@@ -1,0 +1,65 @@
+Exercises
+
+1. What are some pros and cons of using linked lists instead of arrays?
+
+  linked lists are more memory efficient, but they may take more time to access
+  each index, and they can only be accessed in order, you cant go directly to an 
+  index like in an array.
+
+2. Come up with a real world example of a linked list.
+
+  A real world example might be a road, going down a peninsula, with houses along it.
+
+Programming Questions
+
+1. The Linked List push function should take a value, create a node, and add it to 
+the end of a list. Below is a push function for a singly linked list. However, there 
+is something wrong with it. Find the bug and fix the code.
+
+  LinkedList.prototype.push = function(element) {
+    SET node = {
+      value: element,
+      next: null
+    }
+
+    IF the head node does not exist
+      THEN SET current node to head
+    ELSE
+      SET current.next to node
+    }
+  }
+
+2. Given an unsorted singly linked list, remove all duplicates from the linked list.
+
+  const removeDupes = (linkedList) => {
+    var noDupes = new LinkedList;
+    noDupes.addToHead(linkedList.head.value)
+    var currentNode = linkedList.head;
+    while(currentNode) {
+      var currentNodeTest = noDupes.head;
+      var check = 0;
+      while(currentNodeTest) {
+        if(currentNode.value === currentNodeTest.value) {
+          check++;
+        }
+        currentNodeTest = currentNodeTest.next;
+      }
+      if(check === 1) {
+        noDupes.addToHead;
+      }
+      currentNode = currentNode.next;
+    }
+    return noDupes;
+  }
+
+3. Given an unsorted singly linked list, reverse it.
+
+  const reverseList = (linkedList) => {
+    var reverse = new LinkedList;
+    var currentNode = linkedList.head;
+    while(currentNode) {
+      reverse.addToHead(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return reverse;
+  }
