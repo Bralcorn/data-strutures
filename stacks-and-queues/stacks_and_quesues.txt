@@ -1,0 +1,66 @@
+Questions
+
+1. What is the main difference between a stack and a queue?
+  A stack is first in, last out, and a queue is first in, first out.
+
+2. What are the similarities between stacks and queues?
+  Both are data structures that use arrays to hold their data. Both 
+  also use methods for removing and adding data.
+
+3. Imagine you are an engineer tasked with implementing the UNDO and 
+REDO options in a word processor such as Microsoft Word. Which data 
+structure would you use for each option and why?
+
+  I would use a stack for both functions, since you want the most recent 
+  change to be the first one out, whether your REDOing or UNDOing.
+
+Programming Questions
+
+1. For this question, I will setup a arrays and then use the push and pop
+  methods, along with a loop to reverse the string. *Javascript*
+
+  var word = "Bloc!";
+  var stack = word.split("");
+  var length = stack.length;
+  var reverse = "";
+
+  for(var i=0; i < length; i++) {
+    reverse = reverse += stack.pop();
+  }
+
+2.
+
+  CLASS Stack
+    FUNCTION pop(queue)
+      ...fill in pseudocode here
+
+      LOOP for current length of queue
+        IF current loop equal to last
+          RETURN first item in queue
+        ELSE
+          MOVE first item to end of queue
+        END IF
+      END LOOP  
+    END FUNCTION
+  END CLASS
+
+3.
+
+  CLASS QUEUE
+    FUNCTION enqueue(element)
+      ...fill in pseudocode here
+
+      ADD element to end of queue
+
+    END FUNCTION
+
+    FUNCTION dequeue
+      ...fill in pseudocode here
+
+      SET first equal to first-element in queue
+      REMOVE first-element in queue
+      RETURN first
+
+    END FUNCTION
+  END CLASS
+  
