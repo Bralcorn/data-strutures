@@ -1,0 +1,87 @@
+Questions 
+  1. What is a binary tree and what makes it unique to other trees?
+    Binary trees only have two children per node, a left child and a right child, which is what 
+    makes them different from other trees.
+
+  2. What is a heuristic?
+    A guess made by an algorithm to solve a problem quicker, at the price of being less accurate.
+
+  3. What is another problem besides the shortest-path problem that requires the use of heuristics?
+    Another problem could be how long it takes to get somewhere, since the algorithm would need to 
+    assume, or guess how fast the person is going.
+
+  4. What is the difference between a depth-first search and a breadth-first search?
+    Depth first, searches along one branch of nodes before moving on to other un searched nodes. 
+    Meacnwhile, the breadth-first search checks nodes row by row.
+
+  5. Explain in your own words what an undirected, a-cyclic, unweighted graph is.
+    This type of graph would have no cost of travel between nodes, and it would not for any loops,
+    and it would have niether a start, nor an end, which I'm guessing would mean node connections 
+    go both ways, not just one.
+
+  6. What kind of graph is a binary search tree?
+    A binary search tree, is a binary tree, which orders nodes values in increasing order from left 
+    to right.
+
+Programming Questions *Javascript*
+
+    1.
+
+      function searchBinaryTree(value, tree) {
+        var currentNode=tree.head;
+        while(currentNode) {
+          if(currentNode.value === value) {
+            return `The value ${value} exists in the tree.`;
+          }
+          else if(currentNode.value < value) {
+            currentNode = currentNode.right;
+          }
+          else {
+            currentNode = currentNode.left;
+          }
+        }
+        return `The value ${value} does not exist in the tree.`;
+      }
+
+    2. 
+
+    function findDistFromHead(tree, value) {
+      var currentNode = tree.head;
+      var dist = 0;
+      while(currentNode) {
+          if(currentNode.value === value) {
+            return dist;
+          }
+          else if(currentNode.value < value) {
+            currentNode = currentNode.right;
+            dist++;
+          }
+          else {
+            currentNode = currentNode.left;
+            dist++;
+          }
+        }
+      return `The value ${value} does not exist in the tree.`;
+    }
+  
+
+    function findDistBtwNodes(tree, value1, value2) {
+      var headValue = tree.head.value;
+      if(value1 === headValue && value2 === headValue) {
+        return 0;
+      }
+      var currentNode = tree.head;
+      var dist1 = findDistFromHead(tree, value1);
+      var dist2 = findDistFromHead(tree, value2);
+      if((value1 <= headValue && value2 >= headValue) && (value1 >= headValue && value2 <= headValue)) {
+        return dist1 + dist2;
+      }
+      else if(value1 > value2) {
+        return dist1 - dist2;
+      }
+      else {
+        return dist2 - dist1;
+      }
+    }
+
+
