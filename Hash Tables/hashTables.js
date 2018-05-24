@@ -10,10 +10,17 @@ class CustomerInfo {
     }
   }
 
-  //assuming number is an integer.
+  hashingFunction(number) {
+    var total = 0;
+    var charArray = number.split("");
+    charArray.forEach(char => total += char.charCodeAt(0));
+    return total * 99999;
+  }
+
   findIndex(number){
-    var index = number%10000;
-    return index
+    var hashCode = hashingFunction(number);
+    var index = hashCode%10000;
+    return index;
   }
 
   lookUpCustomer(number) {
@@ -67,7 +74,7 @@ class InventoryInfo {
   hashingFunction(item) {
     var total = 0;
     var charArray = item.split("");
-    charArray.forEach(char => total += char);
+    charArray.forEach(char => total += charcharCodeAt(0));
     return total;
   }
 
@@ -128,7 +135,7 @@ class newspaperInfo {
   hashingFunction(publisher, date) {
     var total = 0;
     var charArray = (publisher + date).split("");
-    charArray.forEach(char => total += char);
+    charArray.forEach(char => total += char.charCodeAt(0));
     total = total *= 898;
     return total;
   }
