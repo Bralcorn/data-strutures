@@ -12,10 +12,10 @@ class CustomerInfo {
 
   hashingFunction(number) {
     var total = 0;
-    if (this.length == 0) return total;
-    for (i = 0; i < this.length; i++) {
-        char = this.charCodeAt(i);
-        total = ((total<<4)-total)+char;
+    if (number.length == 0) return total;
+    for (i = 0; i < number.length; i++) {
+        char = number.charCodeAt(i);
+        total = ((total<<3)-total)+char;
     }
     return total;
   }
@@ -76,9 +76,9 @@ class InventoryInfo {
 
   hashingFunction(item) {
     var total = 0;
-    if (this.length == 0) return total;
-    for (i = 0; i < this.length; i++) {
-        char = this.charCodeAt(i);
+    if (item.length == 0) return total;
+    for (i = 0; i < item.length; i++) {
+        char = item.charCodeAt(i);
         total = ((total<<3)-total)+char;
     }
     return total;
@@ -140,10 +140,11 @@ class newspaperInfo {
 
   hashingFunction(publisher, date) {
     var total = 0;
-    if (this.length == 0) return total;
-    for (i = 0; i < this.length; i++) {
-        char = this.charCodeAt(i);
-        total = ((total<<4)-total)+char;
+    var add = publisher + date;
+    if (add.length == 0) return total;
+    for (i = 0; i < add.length; i++) {
+        char = add.charCodeAt(i);
+        total = ((total<<3)-total)+char;
     }
     return total;
   }
