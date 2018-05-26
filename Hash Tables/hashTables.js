@@ -3,7 +3,7 @@
 class CustomerInfo {
   constructor(infoArray) {
     if(infoArray === undefined) {
-      this.customers = [];
+      this.customers = new Array(1000);
     }
     else {
       this.customers = infoArray;
@@ -22,7 +22,7 @@ class CustomerInfo {
 
   findIndex(number) {
     var hashCode = hashingFunction(number);
-    var index = hashCode%1000;
+    var index = hashCode%this.customers.length;
     return index;
   }
 
@@ -67,7 +67,7 @@ class CustomerInfo {
 class InventoryInfo {
   constructor(savedArray) {
     if(savedArray === undefined) {
-      this.items = [];
+      this.items = new Array(100);
     }
     else {
       this.items = inventoryArray;
@@ -86,7 +86,7 @@ class InventoryInfo {
 
   findIndex(item){
     var hashCode = hashingFunction(item);
-    var index = hashCode%100;
+    var index = hashCode%this.items.length;
     return index;
   }
 
@@ -131,7 +131,7 @@ class InventoryInfo {
 class newspaperInfo {
   constructor(savedArray) {
     if(savedArray === undefined) {
-      this.items = [];
+      this.items = new Array(1000);
     }
     else {
       this.items = inventoryArray;
@@ -151,7 +151,7 @@ class newspaperInfo {
 
   findIndex(publisher, date){
     var hashCode = hashingFunction(publisher, date);
-    var index = hashCode%10000;
+    var index = hashCode%this.items.length;
     return index;
   }
 
